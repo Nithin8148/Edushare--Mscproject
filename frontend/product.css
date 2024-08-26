@@ -1,0 +1,120 @@
+/* Import Google font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+}
+
+.wrapper {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper header {
+  color: #1d3557;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper.upload form {
+  height: 167px;
+  display: flex;
+  cursor: pointer;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #1d3557;
+}
+
+form :where(i, p) {
+  color: #1d3557;
+}
+
+form i {
+  font-size: 50px;
+}
+
+form p {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.progress-area, .uploaded-area {
+  padding: 10px 0;
+}
+
+.document-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.document {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.document i {
+  font-size: 24px;
+  color: #1d3557;
+}
+
+.document-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.document-name {
+  font-weight: 500;
+}
+
+.document-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.document .fa-download {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.document .fa-download:hover {
+  color: #4a90e2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

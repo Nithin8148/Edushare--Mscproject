@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 flex justify-between items-center">
+        <a class="navbar-brand">
+            <h1>EDUSHARE</h1>
+        </a>
+        <nav class="flex space-x-4">
+            <a href="product.html"><button class="bg-white text-blue-700 hover:bg-gray-200 px-4 py-2 rounded">Add Product</button></a>
+            <button class="bg-white text-blue-700 hover:bg-gray-200 px-4 py-2 rounded">Search</button>
+            <a href="web.html"><button class="bg-white text-blue-700 hover:bg-gray-200 px-4 py-2 rounded">Home</button></a>
+        </nav>
+    </header>
+    <main class="container mx-auto p-6">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-6">
+            <h2 class="text-3xl font-bold mb-6">Profile</h2>
+            <div class="flex justify-between items-center">
+                <div class="w-1/2">
+                    <input type="text" placeholder="Your name" class="w-full mb-4 p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <input type="email" placeholder="Your email address" class="w-full mb-4 p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <input type="password" placeholder="Your password" class="w-full mb-4 p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                    <button class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-4 py-2 rounded shadow">Edit</button>
+                </div>
+                <div class="text-center">
+                    <img id="profile-picture" src="https://via.placeholder.com/150" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-600 shadow-lg">
+                    <input type="file" id="profile-picture-input" class="hidden">
+                    <button onclick="document.getElementById('profile-picture-input').click()" class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-4 py-2 rounded shadow mb-2">Replace</button>
+                    <button onclick="removeProfilePicture()" class="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-4 py-2 rounded shadow">Remove</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+        document.getElementById('profile-picture-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-picture').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function removeProfilePicture() {
+            document.getElementById('profile-picture').src = 'https://via.placeholder.com/150';
+        }
+    </script>
+</body>
+</html>

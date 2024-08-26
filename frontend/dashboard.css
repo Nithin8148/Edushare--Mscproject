@@ -1,0 +1,48 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg,#0e1e2e);
+}
+
+nav button {
+    transition: background-color 0.3s ease;
+}
+
+.profile input, .profile button {
+    margin-bottom: 10px;
+}
+
+.profile-picture img {
+    max-width: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.resources-accessed {
+    margin-top: 20px;
+}
+
+.documents {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.document-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.document-item {
+    width: 30%;
+    text-align: center;
+}
+
+.document-item img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
